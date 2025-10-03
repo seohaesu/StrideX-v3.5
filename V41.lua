@@ -650,7 +650,7 @@ addStroke(minimizedBtn, activeTheme.Border, 2)
 
 -- ====== Unified Control Box (Status + Controls + Speed Input) ======
 local controlBox = Instance.new("Frame", contentContainer)
-controlBox.Size = UDim2.new(1, -24, 0, 320)
+controlBox.Size = UDim2.new(1, -24, 0, 270)
 controlBox.Position = UDim2.new(0, 12, 0, 66)
 controlBox.BackgroundColor3 = activeTheme.BoxBg
 controlBox.BorderSizePixel = 0
@@ -752,8 +752,8 @@ local speedInput = createSpeedInput(controlBox)
 
 -- ====== Replay List Box ======
 local replayBox = Instance.new("Frame", contentContainer)
-replayBox.Size = UDim2.new(1, -24, 0, 104)
-replayBox.Position = UDim2.new(0, 12, 0, 398)
+replayBox.Size = UDim2.new(1, -24, 0, 150)
+replayBox.Position = UDim2.new(0, 12, 0, 348)
 replayBox.BackgroundColor3 = activeTheme.BoxBg
 replayBox.BorderSizePixel = 0
 replayBox.ZIndex = 10

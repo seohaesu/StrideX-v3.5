@@ -404,26 +404,26 @@ local speedInputBox, speedInputStroke
 
 local function createSpeedInput(parent)
     local inputContainer = Instance.new("Frame", parent)
-    inputContainer.Size = UDim2.new(1, -16, 0, 36)
-    inputContainer.Position = UDim2.new(0, 8, 0, 200)
+    inputContainer.Size = UDim2.new(1, -16, 0, 64)
+    inputContainer.Position = UDim2.new(0, 8, 0, 192)
     inputContainer.BackgroundTransparency = 1
     inputContainer.ZIndex = 11
     
     local speedLabel = Instance.new("TextLabel", inputContainer)
-    speedLabel.Size = UDim2.new(0, 50, 1, 0)
+    speedLabel.Size = UDim2.new(1, 0, 0, 16)
     speedLabel.Position = UDim2.new(0, 0, 0, 0)
     speedLabel.BackgroundTransparency = 1
-    speedLabel.Text = "Speed:"
+    speedLabel.Text = "Playback Speed"
     speedLabel.Font = Enum.Font.GothamBold
     speedLabel.TextSize = 11
-    speedLabel.TextColor3 = activeTheme.TextPrimary
+    speedLabel.TextColor3 = activeTheme.TextMuted
     speedLabel.TextXAlignment = Enum.TextXAlignment.Left
-    speedLabel.TextYAlignment = Enum.TextYAlignment.Center
+    speedLabel.TextYAlignment = Enum.TextYAlignment.Top
     speedLabel.ZIndex = 12
     
     local inputBox = Instance.new("Frame", inputContainer)
-    inputBox.Size = UDim2.new(1, -60, 1, 0)
-    inputBox.Position = UDim2.new(0, 55, 0, 0)
+    inputBox.Size = UDim2.new(1, 0, 0, 36)
+    inputBox.Position = UDim2.new(0, 0, 0, 20)
     inputBox.BackgroundColor3 = activeTheme.BoxBg
     inputBox.BorderSizePixel = 0
     inputBox.ZIndex = 12
@@ -446,8 +446,8 @@ local function createSpeedInput(parent)
     speedInputBox.ZIndex = 13
     
     local hintLabel = Instance.new("TextLabel", inputContainer)
-    hintLabel.Size = UDim2.new(1, -60, 0, 12)
-    hintLabel.Position = UDim2.new(0, 55, 1, 2)
+    hintLabel.Size = UDim2.new(1, 0, 0, 12)
+    hintLabel.Position = UDim2.new(0, 0, 0, 58)
     hintLabel.BackgroundTransparency = 1
     hintLabel.Text = "Range: 0.1x - 5.0x"
     hintLabel.Font = Enum.Font.GothamMedium
@@ -529,8 +529,8 @@ screenGui.Parent = playerGui
 
 local mainPanel = Instance.new("Frame", screenGui)
 mainPanel.Name = "MainPanel"
-mainPanel.Size = UDim2.new(0, 380, 0, 490)
-mainPanel.Position = UDim2.new(0.5, -190, 0.5, -245)
+mainPanel.Size = UDim2.new(0, 380, 0, 510)
+mainPanel.Position = UDim2.new(0.5, -190, 0.5, -255)
 mainPanel.BackgroundColor3 = activeTheme.MainBg
 mainPanel.BorderSizePixel = 0
 mainPanel.Active = true
@@ -650,7 +650,7 @@ addStroke(minimizedBtn, activeTheme.Border, 2)
 
 -- ====== Unified Control Box (Status + Controls + Speed Input) ======
 local controlBox = Instance.new("Frame", contentContainer)
-controlBox.Size = UDim2.new(1, -24, 0, 300)
+controlBox.Size = UDim2.new(1, -24, 0, 320)
 controlBox.Position = UDim2.new(0, 12, 0, 66)
 controlBox.BackgroundColor3 = activeTheme.BoxBg
 controlBox.BorderSizePixel = 0
@@ -747,25 +747,13 @@ separator2.BackgroundColor3 = activeTheme.Border
 separator2.BorderSizePixel = 0
 separator2.ZIndex = 11
 
--- Speed label
-local speedSectionLabel = Instance.new("TextLabel", controlBox)
-speedSectionLabel.Size = UDim2.new(1, -16, 0, 16)
-speedSectionLabel.Position = UDim2.new(0, 8, 0, 196)
-speedSectionLabel.BackgroundTransparency = 1
-speedSectionLabel.Text = "Playback Speed"
-speedSectionLabel.Font = Enum.Font.GothamBold
-speedSectionLabel.TextSize = 11
-speedSectionLabel.TextColor3 = activeTheme.TextMuted
-speedSectionLabel.TextXAlignment = Enum.TextXAlignment.Left
-speedSectionLabel.ZIndex = 11
-
 -- ====== Speed Input (Manual) ======
 local speedInput = createSpeedInput(controlBox)
 
 -- ====== Replay List Box ======
 local replayBox = Instance.new("Frame", contentContainer)
 replayBox.Size = UDim2.new(1, -24, 0, 104)
-replayBox.Position = UDim2.new(0, 12, 0, 378)
+replayBox.Position = UDim2.new(0, 12, 0, 398)
 replayBox.BackgroundColor3 = activeTheme.BoxBg
 replayBox.BorderSizePixel = 0
 replayBox.ZIndex = 10
@@ -828,7 +816,6 @@ local function applyTheme()
     controlTitle.TextColor3 = activeTheme.TextMuted
     separator1.BackgroundColor3 = activeTheme.Border
     separator2.BackgroundColor3 = activeTheme.Border
-    speedSectionLabel.TextColor3 = activeTheme.TextMuted
     
     replayBox.BackgroundColor3 = activeTheme.BoxBg
     replayTitle.TextColor3 = activeTheme.TextMuted
@@ -1484,6 +1471,7 @@ print("   • Manual speed input (type any value)")
 print("   • Range: 0.1x - 5.0x")
 print("   • Visual feedback (green/red border)")
 print("   • Status integrated into Controls")
+print("   • Fixed input box position below label")
 print("")
 print("🎮 Features:")
 print("   • Type custom playback speed")
@@ -1492,4 +1480,3 @@ print("   • Smooth animations")
 print("   • Organized replay list")
 print("")
 print("💡 Type speed values like: 0.5, 1.0, 2.5, etc.")
- 

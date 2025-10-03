@@ -1339,7 +1339,7 @@ function createReplayItem(saved, index)
     infoLabel.TextColor3 = activeTheme.TextSecondary
     infoLabel.TextXAlignment = Enum.TextXAlignment.Left
     
-    local function create EmojiBtn(emoji, pos, color, callback)
+    local function createEmojiBtn(emoji, pos, color, callback)
         local btn = Instance.new("TextButton", item)
         btn.Size = UDim2.new(0, 28, 0, 28)
         btn.Position = pos
